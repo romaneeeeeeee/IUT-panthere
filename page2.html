@@ -32,7 +32,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: #f9f9f9;
+            background: #f7f9fc;
         }
         header, footer {
             background: #ff6f61;
@@ -49,19 +49,22 @@
         .hero-section {
             background: linear-gradient(135deg, #ff6f61, #ff885e);
             color: #fff;
-            padding: 3rem 0;
+            padding: 4rem 0;
         }
         .hero-section p {
             font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .btn-atomic-tangerine {
             background: #ff6f61;
             border: none;
             color: #fff;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
         .btn-atomic-tangerine:hover {
             background: #ff885e;
+            transform: scale(1.05);
         }
         footer .social a {
             color: #fff;
@@ -87,6 +90,27 @@
         }
         .scrollToTop:hover {
             opacity: 0.8;
+        }
+        .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .contact-info p + p {
+            margin-top: 0.5rem;
+        }
+        .form-group label {
+            font-weight: 700;
+            color: #555;
+        }
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: #ff6f61;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
         }
     </style>
 </head>
@@ -155,11 +179,15 @@
                             <button class="btn btn-lg btn-block btn-atomic-tangerine" type="submit">Envoyer</button>
                         </form>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 contact-info">
                         <p>
-                            contact@agencelapanthere.com<br>
-                            2 place Sathonay, 69001 Lyon<br>
-                            Ouvert de 9h à 18h, du lundi au vendredi
+                            <strong>Email :</strong> contact@agencelapanthere.com
+                        </p>
+                        <p>
+                            <strong>Adresse :</strong> 2 place Sathonay, 69001 Lyon
+                        </p>
+                        <p>
+                            <strong>Horaires :</strong> Ouvert de 9h à 18h, du lundi au vendredi
                         </p>
                     </div>
                 </div>
