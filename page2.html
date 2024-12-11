@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.jpg" type="image/png">
 
     <!-- CSS Files -->
-    <link rel="preload" href="./css/bootstrap.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./css/font-awesome.css">
@@ -27,29 +27,32 @@
 
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
         }
         header, footer {
+            background: #ff6f61;
+            color: #fff;
+            padding: 1rem 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
+        .navbar-brand img {
+            max-height: 50px;
+        }
+        h1, h2, h3, h4 {
+            font-weight: 700;
         }
         .hero-section {
             background: linear-gradient(135deg, #ff6f61, #ff885e);
-            padding: 2rem 0;
-        }
-        .hero-section h1 {
             color: #fff;
+            padding: 3rem 0;
         }
         .hero-section p {
-            color: #fefefe;
-        }
-        .form-group label {
-            font-weight: bold;
+            font-size: 1.2rem;
         }
         .btn-atomic-tangerine {
             background: #ff6f61;
@@ -60,16 +63,26 @@
         .btn-atomic-tangerine:hover {
             background: #ff885e;
         }
-        .social a {
+        footer .social a {
             color: #fff;
             transition: color 0.3s;
         }
-        .social a:hover {
+        footer .social a:hover {
             color: #f4f4f4;
         }
         .scrollToTop {
             background: #ff6f61;
             color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: opacity 0.3s;
         }
         .scrollToTop:hover {
@@ -82,12 +95,12 @@
     <div class="page-container">
 
         <!-- Header -->
-        <header class="bloc bgc-white" id="bloc-0">
-            <div class="container bloc-sm">
+        <header class="bloc" id="bloc-0">
+            <div class="container">
                 <nav class="navbar row">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.html">
-                            <img src="img/agence-la-panthere-monochrome.svg" alt="Agence La Panthère Logo" height="40">
+                            <img src="img/agence-la-panthere-monochrome.svg" alt="Agence La Panthère Logo">
                         </a>
                         <button id="nav-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
                             <span class="sr-only">Toggle navigation</span>
@@ -108,15 +121,18 @@
 
         <!-- Hero Section -->
         <section class="hero-section text-center" id="bloc-6">
-            <div class="container bloc-lg">
+            <div class="container">
                 <h1>Parlons web design !</h1>
-                <p>Nous sommes ravis que vous souhaitiez collaborer avec notre agence.<br> Parlez-nous de votre projet en complétant le formulaire ci-dessous.</p>
+                <p>
+                    Nous sommes ravis que vous souhaitiez collaborer avec notre agence.<br>
+                    Parlez-nous de votre projet en complétant le formulaire ci-dessous.
+                </p>
             </div>
         </section>
 
         <!-- Contact Form Section -->
         <section class="bloc bgc-white" id="bloc-7">
-            <div class="container bloc-lg">
+            <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <form id="form_1" novalidate>
@@ -151,16 +167,16 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bloc bgc-atomic-tangerine" id="bloc-8">
-            <div class="container bloc-sm">
+        <footer class="bloc" id="bloc-8">
+            <div class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <p class="white">Agence La Panthère - Agence web basée à Lyon.</p>
+                        <p>Agence La Panthère - Agence web basée à Lyon.</p>
                         <div class="social row">
-                            <a class="social col-sm-3 text-center" href="#" aria-label="Twitter"><span class="fa fa-twitter icon-md"></span></a>
-                            <a class="social col-sm-3 text-center" href="#" aria-label="Facebook"><span class="fa fa-facebook icon-md"></span></a>
-                            <a class="social col-sm-3 text-center" href="#" aria-label="Dribbble"><span class="fa fa-dribbble icon-md"></span></a>
-                            <a class="social col-sm-3 text-center" href="#" aria-label="Instagram"><span class="fa fa-instagram icon-md"></span></a>
+                            <a class="col-sm-3 text-center" href="#" aria-label="Twitter"><span class="fa fa-twitter icon-md"></span></a>
+                            <a class="col-sm-3 text-center" href="#" aria-label="Facebook"><span class="fa fa-facebook icon-md"></span></a>
+                            <a class="col-sm-3 text-center" href="#" aria-label="Dribbble"><span class="fa fa-dribbble icon-md"></span></a>
+                            <a class="col-sm-3 text-center" href="#" aria-label="Instagram"><span class="fa fa-instagram icon-md"></span></a>
                         </div>
                     </div>
                 </div>
@@ -170,7 +186,7 @@
     </div>
 
     <!-- Scroll to Top Button -->
-    <a class="bloc-button btn btn-d scrollToTop" href="#bloc-0" aria-label="Retour en haut">
+    <a class="scrollToTop" href="#bloc-0" aria-label="Retour en haut">
         <span class="fa fa-chevron-up"></span>
     </a>
 </body>
