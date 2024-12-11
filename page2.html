@@ -7,21 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="icon" href="favicon.jpg" type="image/png">
 
-    <!-- CSS Files -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./css/font-awesome.css">
-    <link rel="stylesheet" href="./css/et-line.css">
 
-    <!-- JavaScript Files -->
-    <script src="./js/jquery-2.1.0.js" defer></script>
-    <script src="./js/bootstrap.js" defer></script>
-    <script src="./js/blocs.js" defer></script>
-    <script src="./js/jquery.touchSwipe.js" defer></script>
-    <script src="./js/gmaps.js" defer></script>
-    <script src="./js/jqBootstrapValidation.js" defer></script>
-    <script src="./js/formHandler.js" defer></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <title>Contactez l'Agence Web Panthère à Lyon - Formulaire de contact</title>
 
@@ -29,50 +20,86 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: #f7f9fc;
+            background: #f9f9f9;
         }
-        header, footer {
-            background: #ff6f61;
+
+        header {
+            background: #222;
             color: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+
         .navbar-brand img {
-            max-height: 50px;
+            max-height: 40px;
         }
-        h1, h2, h3, h4 {
+
+        .hero-section {
+            background: linear-gradient(135deg, #ff6f61, #ff8a70);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
             font-weight: 700;
         }
-        .hero-section {
-            background: linear-gradient(135deg, #ff6f61, #ff885e);
-            color: #fff;
-            padding: 4rem 0;
-        }
+
         .hero-section p {
             font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 1rem auto;
         }
-        .btn-atomic-tangerine {
+
+        .btn-custom {
             background: #ff6f61;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
             border: none;
-            color: #fff;
-            transition: background 0.3s, transform 0.2s;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
-        .btn-atomic-tangerine:hover {
-            background: #ff885e;
-            transform: scale(1.05);
+
+        .btn-custom:hover {
+            background: #ff8a70;
+            transform: translateY(-3px);
         }
-        footer .social a {
+
+        footer {
+            background: #222;
             color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
             transition: color 0.3s;
         }
-        footer .social a:hover {
-            color: #f4f4f4;
+
+        footer .social-icons a:hover {
+            color: #ff8a70;
         }
+
+        .form-control {
+            border-radius: 0.5rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #ff6f61;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
         .scrollToTop {
             background: #ff6f61;
             color: #fff;
@@ -88,134 +115,97 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: opacity 0.3s;
         }
+
         .scrollToTop:hover {
             opacity: 0.8;
         }
-        .contact-info p {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-        .contact-info p + p {
-            margin-top: 0.5rem;
-        }
-        .form-group label {
-            font-weight: 700;
-            color: #555;
-        }
-        .form-control {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            transition: border-color 0.3s;
-        }
-        .form-control:focus {
-            border-color: #ff6f61;
-            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+
+        .contact-info {
+            background: #fefefe;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <!-- Principal conteneur -->
-    <div class="page-container">
+    <!-- Header -->
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/agence-la-panthere-monochrome.svg" alt="Agence La Panthère">
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="page2.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Header -->
-        <header class="bloc" id="bloc-0">
-            <div class="container">
-                <nav class="navbar row">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="img/agence-la-panthere-monochrome.svg" alt="Agence La Panthère Logo">
-                        </a>
-                        <button id="nav-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse navbar-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="page2.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Parlons web design !</h1>
+            <p>Nous sommes ravis que vous souhaitiez collaborer avec notre agence. Parlez-nous de votre projet en complétant le formulaire ci-dessous.</p>
+        </div>
+    </section>
 
-        <!-- Hero Section -->
-        <section class="hero-section text-center" id="bloc-6">
-            <div class="container">
-                <h1>Parlons web design !</h1>
-                <p>
-                    Nous sommes ravis que vous souhaitiez collaborer avec notre agence.<br>
-                    Parlez-nous de votre projet en complétant le formulaire ci-dessous.
-                </p>
-            </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section class="bloc bgc-white" id="bloc-7">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <form id="form_1" novalidate>
-                            <div class="form-group">
-                                <label for="name">Nom</label>
-                                <input id="name" name="name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Adresse email</label>
-                                <input id="email" name="email" class="form-control" type="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="reference">Comment nous avez-vous connu ?</label>
-                                <input id="reference" name="reference" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Brief de votre projet</label>
-                                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
-                            </div>
-                            <button class="btn btn-lg btn-block btn-atomic-tangerine" type="submit">Envoyer</button>
-                        </form>
-                    </div>
-                    <div class="col-sm-6 contact-info">
-                        <p>
-                            <strong>Email :</strong> contact@agencelapanthere.com
-                        </p>
-                        <p>
-                            <strong>Adresse :</strong> 2 place Sathonay, 69001 Lyon
-                        </p>
-                        <p>
-                            <strong>Horaires :</strong> Ouvert de 9h à 18h, du lundi au vendredi
-                        </p>
-                    </div>
+    <!-- Contact Section -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="contact-info">
+                    <p><strong>Email :</strong> contact@agencelapanthere.com</p>
+                    <p><strong>Adresse :</strong> 2 place Sathonay, 69001 Lyon</p>
+                    <p><strong>Horaires :</strong> Ouvert de 9h à 18h, du lundi au vendredi</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bloc" id="bloc-8">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <p>Agence La Panthère - Agence web basée à Lyon.</p>
-                        <div class="social row">
-                            <a class="col-sm-3 text-center" href="#" aria-label="Twitter"><span class="fa fa-twitter icon-md"></span></a>
-                            <a class="col-sm-3 text-center" href="#" aria-label="Facebook"><span class="fa fa-facebook icon-md"></span></a>
-                            <a class="col-sm-3 text-center" href="#" aria-label="Dribbble"><span class="fa fa-dribbble icon-md"></span></a>
-                            <a class="col-sm-3 text-center" href="#" aria-label="Instagram"><span class="fa fa-instagram icon-md"></span></a>
-                        </div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="name" required>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Adresse email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="reference" class="form-label">Comment nous avez-vous connu ?</label>
+                        <input type="text" class="form-control" id="reference" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Brief de votre projet</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Envoyer</button>
+                </form>
             </div>
-        </footer>
+        </div>
+    </section>
 
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Agence La Panthère - Tous droits réservés.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Scroll to Top Button -->
-    <a class="scrollToTop" href="#bloc-0" aria-label="Retour en haut">
-        <span class="fa fa-chevron-up"></span>
+    <!-- Scroll to Top -->
+    <a class="scrollToTop" href="#">
+        <i class="fas fa-chevron-up"></i>
     </a>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
